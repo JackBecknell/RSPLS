@@ -11,4 +11,10 @@ class AiPlayer(Player):
     def generate_gesture(self):
         for gesture in range(len(self.gesture)):
             return random.choice(self.gesture)
-  
+            
+            
+
+
+
+
+
