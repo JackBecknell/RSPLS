@@ -1,13 +1,15 @@
 import imp
 from player import Player
+from ai_player import AiPlayer
+from human_player import HumanPlayer
 
 
 
 
 class PlayingField:
     def __init__(self) -> None:
-        self.player_one = Player()
-        self.player_two = "second"
+        self.player_one = HumanPlayer()
+        self.player_two = self.user_chooses_1_or_2_player()
 
     def display_welcome(self):
         pass
@@ -32,6 +34,15 @@ class PlayingField:
                         #if count is more than 2
                             #display winner
 
+    def user_chooses_1_or_2_player(self):
+        user_choice = input("Type 1 for one player game.\nType 2 for two player game.\n : ")
+        while user_choice not in ['1','2']:
+            user_choice = input("Invalid Input\nType 1 for one player game.\nType 2 for two player game.\n : ")
+        if user_choice == '1':
+            return AiPlayer()
+        else:
+            return HumanPlayer()
+        
 
     def player_one_turn(self):
         pass
@@ -40,6 +51,7 @@ class PlayingField:
         #check user input
         #if input is within range,
         #return input
+    
     def player_two_turn(self):
         pass
         #choose between rock, paper, scissor, lizard, spock
@@ -51,4 +63,6 @@ class PlayingField:
 
     def display_winner(self):
         pass
+        
+
 
