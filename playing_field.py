@@ -1,10 +1,12 @@
+import imp
+from player import Player
 
 
 
 
 class PlayingField:
     def __init__(self) -> None:
-        self.player_one = "first"
+        self.player_one = Player()
         self.player_two = "second"
 
     def display_welcome(self):
