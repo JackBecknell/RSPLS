@@ -33,11 +33,11 @@ class PlayingField:
 #Lets the users/user play as many round as it takes to reach 3 wins.
     def battle_sequence(self):
         while self.player_one.wins != 3 and self.player_two.wins != 3:
-            self.player_one.current_gesture = self.player_one.user_picks_gesture(self.player_one.name)
+            self.player_one.current_gesture = self.player_one.generate_gesture(self.player_one.name)
             if self.player_two.status == 'Machine':
                 self.player_two.current_gesture = self.player_two.generate_gesture()
             else:
-                self.player_two.current_gesture = self.player_two.user_picks_gesture(self.player_two.name)
+                self.player_two.current_gesture = self.player_two.generate_gesture(self.player_two.name)
             if self.player_one.current_gesture == self.player_two.current_gesture:
                 print("A Tie!")
             elif self.player_one.current_gesture in ((self.player_two.gestures_win_lose_dict)[self.player_two.current_gesture]):
